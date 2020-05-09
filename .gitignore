@@ -1,4 +1,5 @@
 source/*.o
 source/*.exe
 build/**
-
+.vs
+out
