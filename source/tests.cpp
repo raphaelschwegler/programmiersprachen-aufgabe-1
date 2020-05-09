@@ -22,11 +22,11 @@ int gcd(int a, int b)
 
 TEST_CASE(" describe_gcd ", "[gcd]")
 {
-    CHECK(gcd(2, 4) == 2);
-    CHECK(gcd(9, 6) == 3);
-    CHECK(gcd(3, 7) == 1);
-    CHECK(gcd(0, 7) == -1);
-    CHECK(gcd(3, 0) == -1);
+    REQUIRE(gcd(2, 4) == 2);
+    REQUIRE(gcd(9, 6) == 3);
+    REQUIRE(gcd(3, 7) == 1);
+    REQUIRE(gcd(0, 7) == -1);
+    REQUIRE(gcd(3, 0) == -1);
 }
 
 int main(int argc, char* argv[])
