@@ -4,6 +4,23 @@
 
 int gcd(int a, int b)
 {
+    if (a == 0 || b == 0) {
+        return NULL;
+    }
+    else if (a > b) {
+        for (int gcd = b; gcd > 0; gcd--) {
+            if ((b % gcd == 0) && (a % gcd == 0)) {
+                return gcd;
+            }
+        }
+    }
+    else if (b > a) {
+        for (int gcd = a; gcd > 0; gcd--) {
+            if ((b % gcd == 0) && (a % gcd == 0)) {
+                return gcd;
+            }
+        }
+    }
     return 1;
 }
 
