@@ -5,20 +5,16 @@
 int gcd(int a, int b)
 {
     if (a == 0 || b == 0) {
-        return NULL;
+        return -1;
     }
-    else if (a > b) {
-        for (int gcd = b; gcd > 0; gcd--) {
-            if ((b % gcd == 0) && (a % gcd == 0)) {
-                return gcd;
-            }
-        }
+    if (a < b) {
+        int c = a;
+        a = b;
+        b = c;
     }
-    else if (b > a) {
-        for (int gcd = a; gcd > 0; gcd--) {
-            if ((b % gcd == 0) && (a % gcd == 0)) {
-                return gcd;
-            }
+    for (int gcd = b; gcd > 0; gcd--) {
+        if ((b % gcd == 0) && (a % gcd == 0)) {
+            return gcd;
         }
     }
     return 1;
@@ -29,6 +25,8 @@ TEST_CASE(" describe_gcd ", "[gcd]")
     CHECK(gcd(2, 4) == 2);
     CHECK(gcd(9, 6) == 3);
     CHECK(gcd(3, 7) == 1);
+    CHECK(gcd(0, 7) == -1);
+    CHECK(gcd(3, 0) == -1);
 }
 
 int main(int argc, char* argv[])
