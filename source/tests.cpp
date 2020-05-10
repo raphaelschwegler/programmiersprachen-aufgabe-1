@@ -50,12 +50,17 @@ TEST_CASE(" describe_quersumme ", "[quersumme]")
 
 int sum_multiples (int a, int b, int c) {
     int result = 0;
+    for (int i = 1; i <= c; i++) {
+        if (i % a == 0 || i % b == 0) {
+            result += i;
+        }
+    }
     return result;
 }
 
 TEST_CASE(" describe_sum_multiples ", "[sum_multiples]")
 {
-    REQUIRE(sum_multiples(3,5,100) == 100);
+    REQUIRE(sum_multiples(3,5,1000) == 234168);
 }
 
 int main(int argc, char* argv[])
