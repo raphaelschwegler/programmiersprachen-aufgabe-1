@@ -48,6 +48,16 @@ TEST_CASE(" describe_quersumme ", "[quersumme]")
     REQUIRE(quersumme(121551) == 15);
 }
 
+int sum_multiples (int a, int b, int c) {
+    int result = 0;
+    return result;
+}
+
+TEST_CASE(" describe_sum_multiples ", "[sum_multiples]")
+{
+    REQUIRE(sum_multiples(3,5,100) == 100);
+}
+
 int main(int argc, char* argv[])
 {
   return Catch::Session().run(argc, argv);
