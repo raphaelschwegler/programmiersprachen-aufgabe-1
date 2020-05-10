@@ -62,6 +62,25 @@ TEST_CASE(" describe_sum_multiples ", "[sum_multiples]")
 {
     REQUIRE(sum_multiples(3,5,1000) == 234168);
 }
+long factorial(int a) {
+    long long factorial = 1;
+    for (int counter = 1; counter <= a; counter++) {
+        factorial *= counter;
+    }
+    return factorial;
+}
+
+
+
+
+
+TEST_CASE(" describe_factorial ", "[factorial]")
+{
+    REQUIRE(factorial(4) == 24);
+    REQUIRE(factorial(1) == 1);
+    REQUIRE(factorial(6) == 720);
+    REQUIRE(factorial(10) == 3628800);
+}
 
 int main(int argc, char* argv[])
 {
