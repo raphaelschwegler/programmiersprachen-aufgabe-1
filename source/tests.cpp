@@ -29,6 +29,21 @@ TEST_CASE(" describe_gcd ", "[gcd]")
     REQUIRE(gcd(3, 0) == -1);
 }
 
+int quersumme (int a,)
+{
+    return 1;
+}
+
+TEST_CASE(" describe_quersumme ", "[quersumme]")
+{
+    REQUIRE(quersumme(2) == 2);
+    REQUIRE(quersumme(99) == 18);
+    REQUIRE(quersumme(13885) == 25);
+    REQUIRE(quersumme(0) == 0);
+    REQUIRE(quersumme(121501) == 10);
+    REQUIRE(quersumme(121551) == 15)
+}
+
 int main(int argc, char* argv[])
 {
   return Catch::Session().run(argc, argv);
