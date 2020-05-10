@@ -128,31 +128,33 @@ TEST_CASE(" describe_fractal ", "[fractal]")
 }
 
 double cVolume(double r, double h) {
+
     
-    return (0.0);
+    return (atan(1) * 4) * r * r * h;
 
 }
 
 TEST_CASE(" describe_cVolume ", "[cVolume]")
 {
     REQUIRE(cVolume(4.0, 2.0) == Approx(100.53));
-    REQUIRE(cVolume(2.2, 3.0) == Approx(45.62));
+    REQUIRE(cVolume(2.2, 3.0) == Approx(45.6159253));
     REQUIRE(cVolume(0, 2.0) == Approx(0));
     REQUIRE(cVolume(1, 1) == Approx(3.1415926535898));
 }
 
 double cArea(double r, double h) {
-
-    return (0.0);
+    double area;
+    area = 2 * (atan(1) * 4) * r * (r + h);
+    return area;
 
 }
 
 TEST_CASE(" describe_cArea ", "[cArea]")
 {
-    REQUIRE(cArea(4.0, 2.0) == Approx(150.8));
+    REQUIRE(cArea(4.0, 2.0) == Approx(150.7964473723));
     REQUIRE(cArea(2.2, 3.0) == Approx(71.88));
     REQUIRE(cArea(0, 0) == Approx(0));
-    REQUIRE(cArea(1, 1) == Approx(12.57));
+    REQUIRE(cArea(1, 1) == Approx(12.5663706144));
 }
 
 
