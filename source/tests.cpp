@@ -70,16 +70,27 @@ long factorial(int a) {
     return factorial;
 }
 
-
-
-
-
 TEST_CASE(" describe_factorial ", "[factorial]")
 {
     REQUIRE(factorial(4) == 24);
     REQUIRE(factorial(1) == 1);
     REQUIRE(factorial(6) == 720);
     REQUIRE(factorial(10) == 3628800);
+}
+
+
+boolean is_prime (int a) {
+    return true;
+}
+
+TEST_CASE(" describe_is_prime ", "[is_prime]")
+{
+    REQUIRE(is_prime(4) == false);
+    REQUIRE(is_prime(5) == true);
+    REQUIRE(is_prime(2) == true);
+    REQUIRE(is_prime(3) == true);
+    REQUIRE(is_prime(17) == true);
+   
 }
 
 int main(int argc, char* argv[])
