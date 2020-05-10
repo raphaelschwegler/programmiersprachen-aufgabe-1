@@ -80,7 +80,25 @@ TEST_CASE(" describe_factorial ", "[factorial]")
 
 
 boolean is_prime (int a) {
+    if (a == 2 || a == 3) {
+        return true;
+    }
+    else if (a <= 0) {
+        return false;
+    }
+    else if (a == 1) {
+        // depends on interpretation but my math teacher said no so....
+        return false;
+    }
+    else {
+        for (int i = 2; i < a; i++) {
+            if (a % i != 0) {
+                return false;
+            }
+        }
+    }
     return true;
+    
 }
 
 TEST_CASE(" describe_is_prime ", "[is_prime]")
