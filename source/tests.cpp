@@ -1,6 +1,7 @@
 #define CATCH_CONFIG_RUNNER
 #include <catch.hpp>
-# include < cmath >
+#include < cmath >
+#include <math.h>
 
 int gcd(int a, int b)
 {
@@ -110,6 +111,24 @@ TEST_CASE(" describe_is_prime ", "[is_prime]")
     REQUIRE(is_prime(17) == true);
    
 }
+
+double fractal (double a) {
+    double b;
+    double c = modf(a, &b);
+    return c;
+
+}
+
+TEST_CASE(" describe_fractal ", "[fractal]")
+{
+    REQUIRE(fractal(4.123) == Approx(0.123));
+    REQUIRE(fractal(0.1241) == Approx(0.1241));
+    REQUIRE(fractal(123132.3456) == Approx(0.3456));
+    REQUIRE(fractal(-12.12) == Approx(-0.12));
+    
+
+}
+
 
 int main(int argc, char* argv[])
 {
