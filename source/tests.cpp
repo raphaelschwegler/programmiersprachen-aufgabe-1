@@ -125,8 +125,34 @@ TEST_CASE(" describe_fractal ", "[fractal]")
     REQUIRE(fractal(0.1241) == Approx(0.1241));
     REQUIRE(fractal(123132.3456) == Approx(0.3456));
     REQUIRE(fractal(-12.12) == Approx(-0.12));
-    
+}
 
+double cVolume(double r, double h) {
+    
+    return (0.0);
+
+}
+
+TEST_CASE(" describe_cVolume ", "[cVolume]")
+{
+    REQUIRE(cVolume(4.0, 2.0) == Approx(100.53));
+    REQUIRE(cVolume(2.2, 3.0) == Approx(45.62));
+    REQUIRE(cVolume(0, 2.0) == Approx(0));
+    REQUIRE(cVolume(1, 1) == Approx(3.1415926535898));
+}
+
+double cArea(double r, double h) {
+
+    return (0.0);
+
+}
+
+TEST_CASE(" describe_cArea ", "[cArea]")
+{
+    REQUIRE(cArea(4.0, 2.0) == Approx(150.8));
+    REQUIRE(cArea(2.2, 3.0) == Approx(71.88));
+    REQUIRE(cArea(0, 0) == Approx(0));
+    REQUIRE(cArea(1, 1) == Approx(12.57));
 }
 
 
