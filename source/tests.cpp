@@ -29,9 +29,13 @@ TEST_CASE(" describe_gcd ", "[gcd]")
     REQUIRE(gcd(3, 0) == -1);
 }
 
-int quersumme (int a,)
-{
-    return 1;
+int quersumme (int a){
+    int result = 0;
+    while (a > 0) {
+        result += a % 10;
+        a = a / 10;
+    }
+    return result;
 }
 
 TEST_CASE(" describe_quersumme ", "[quersumme]")
@@ -41,7 +45,7 @@ TEST_CASE(" describe_quersumme ", "[quersumme]")
     REQUIRE(quersumme(13885) == 25);
     REQUIRE(quersumme(0) == 0);
     REQUIRE(quersumme(121501) == 10);
-    REQUIRE(quersumme(121551) == 15)
+    REQUIRE(quersumme(121551) == 15);
 }
 
 int main(int argc, char* argv[])
